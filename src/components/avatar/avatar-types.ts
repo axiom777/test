@@ -3,10 +3,10 @@ export type AvatarProps = {
   img: string;
   name: string;
   inProfile: boolean;
+  href: string;
 };
 
 export type AvatarAttribute = {
   class: string[];
-  src: string;
   alt: string;
 };

@@ -1,9 +1,8 @@
+import './avatar.scss';
 import { Block } from '../../utils/core/Block';
-import { renderDOM } from '../../utils/core/renderDOM';
 import { computeAvatarAttributes } from './avatar-helpers';
 import { AvatarProps } from './avatar-types';
 import { avatarTemplate } from './avatar.template';
-import './avatar.scss';
 
 export class Avatar extends Block<AvatarProps> {
   constructor(props: AvatarProps) {
@@ -11,22 +10,13 @@ export class Avatar extends Block<AvatarProps> {
   }
 
   render() {
-    const { img, name, inProfile } = this.props;
+    const { img, name, inProfile, href } = this.props;
     const avatarAttributes = computeAvatarAttributes({ inProfile, img });
 
     return this.compile(avatarTemplate, {
       name,
-      avatarAttributes,
+      avatarAttributes: { ...avatarAttributes, src: img },
+      href,
     });
   }
 }
-
-const avatarProps = {
-  img: 'avatar2',
-  name: 'Vova',
-  inProfile: true,
-};
-
-const avatar = new Avatar(avatarProps);
-
-renderDOM('#app', avatar);

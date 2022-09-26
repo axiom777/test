@@ -6,7 +6,7 @@
     "start:parcel": "parcel ./src/pages/ui-page/index.pug --port 3000",
     "build": "parcel build ./src/pages/ui-page/index.pug",
     "start": "npm run build && node ./server.js",
-    "test": "parcel ./src/pages/test-page.pug --port 3000"
+    "test": "parcel ./src/pages/testPage/test-page.pug --port 3000"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tacticSugar/sprint_1/issues"
+  },
+  "alias": {
+    "componsnets": "./src/components",
+    "pages": "./src/pages"
   },
   "homepage": "https://github.com/tacticSugar/sprint_1#readme",
   "devDependencies": {
